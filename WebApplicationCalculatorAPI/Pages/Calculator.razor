@@ -8,7 +8,7 @@
             <p>Input 1</p>
         </div>
         <div class="col-md-4">
-            <input placeholder="" />
+            <input placeholder="" @bind="@number1" />
         </div>
     </div>
     <br />
@@ -17,7 +17,7 @@
             <p>Input 2</p>
         </div>
         <div class="col-md-4">
-            <input placeholder="" />
+            <input placeholder="" @bind="number2" />
         </div>
     </div>
     <br />
@@ -26,28 +26,37 @@
             <p>Result</p>
         </div>
         <div class="col-md-4">
-            <input readonly />
+            <input readonly @bind="@result" />
         </div>
     </div>
 
     <br />
-  
+
     <div class="row">
         <div class="col-md-2">
+            <button @onclick="Addition" class="btn btn-primary"> + </button>
         </div>
         <div class="col-md-2">
             <button class="btn btn-primary"> − </button>
-           
+
         </div>
         <div class="col-md-2">
             <button class="btn btn-success "> * </button>
         </div>
         <div class="col-md-2">
-            <button  class="btn btn-primary"> / </button>
+            <button class="btn btn-primary"> / </button>
         </div>
         <div class="col-md-2">
-            <button  class="btn btn-success"> % </button>
+            <button class="btn btn-success"> % </button>
         </div>
     </div>
 </div>
-    
+
+@code { string number1;
+    string number2;
+    string result;
+    void Addition()
+    {
+        result = (Convert.ToDouble(number1) + Convert.ToDouble(number2)).ToString();
+    }
+}

@@ -37,17 +37,17 @@
             <button @onclick="Addition" class="btn btn-primary"> + </button>
         </div>
         <div class="col-md-2">
-            <button class="btn btn-primary"> − </button>
+            <button  @onclick="Subtraction" class="btn btn-primary"> − </button>
 
         </div>
         <div class="col-md-2">
-            <button class="btn btn-success "> * </button>
+            <button  @onclick="Multiplication" class="btn btn-success "> * </button>
         </div>
         <div class="col-md-2">
-            <button class="btn btn-primary"> / </button>
+            <button  @onclick="Division" class="btn btn-primary"> / </button>
         </div>
         <div class="col-md-2">
-            <button class="btn btn-success"> % </button>
+            <button  @onclick="percentage" class="btn btn-success"> % </button>
         </div>
     </div>
 </div>
@@ -58,5 +58,33 @@
     void Addition()
     {
         result = (Convert.ToDouble(number1) + Convert.ToDouble(number2)).ToString();
+    }
+    void Subtraction()
+    {
+        result = (Convert.ToDouble(number1) - Convert.ToDouble(number2)).ToString();
+    }
+    void Multiplication()
+    {
+        result = (Convert.ToDouble(number1) * Convert.ToDouble(number2)).ToString();
+    }
+    void Division()
+    {
+        result = (Convert.ToDouble(number1) * Convert.ToDouble(number2)).ToString();
+    }
+    void DivideNumbers()
+    {
+        if (Convert.ToDouble(number2) != 0)
+        {
+            result = (Convert.ToDouble(number1) / Convert.ToDouble(number2)).ToString();
+        }
+        else
+        {
+            result = "error";
+        }
+    }
+    }
+    void percentage()
+    {
+        result = (Convert.ToDouble(number1) / Convert.ToDouble(number2)).ToString();
     }
 }

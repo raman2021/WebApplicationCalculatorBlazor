@@ -2,6 +2,7 @@ using NUnit.Framework;
 using WebApplicationCalculatorAPI.Pages;
 using Xceed.Wpf.Toolkit;
 
+
 namespace CalculatorTestProject
 {
     public class Tests
@@ -28,7 +29,7 @@ namespace CalculatorTestProject
             double number2 = 1;
             (double number1, double number2) p = (
                             number1, number2);
-            Assert.AreEqual(4, (object)WebApplicationCalculatorAPI.Pages.Calculator.+ p);
+            Assert.AreEqual(4, (object)Calculator.+ p);
         }
         [Test]
         public void Multiplication1()
@@ -46,7 +47,7 @@ namespace CalculatorTestProject
             double number2 = 1;
             (double number1, double number2) p = (
                             number1, number2);
-            Assert.AreEqual(4, (object)WebApplicationCalculatorAPI.Pages.Calculator./ p);
+            Assert.AreEqual(4, (object)Calculator./ p);
         }
     }
 }

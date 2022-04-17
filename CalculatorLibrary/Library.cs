@@ -1,49 +1,27 @@
-﻿using System;
-
-namespace CalculatorLibrary
+﻿namespace CalculatorLibrary
 {
-    public class Library
+    public class Library1
     {
-        public static int Add(String series)
+
+        public int Add(int num1, int num2)
         {
             int result = 0;
 
-            String[] numbers = series.Split(' ');
-
-
-            foreach (string number in numbers)
-            {
-
-                int temp;
-
-
-                if (int.TryParse(number, out temp))
-                {
-
-                    result += temp;
-                }
-                else
-                {
-                    throw new ArgumentException();
-                }
-
-            }
-
-
+            result = num1 + num2;
             return result;
 
 
         }
 
-        public static double Sub(double number1, double number2)
+        public double Sub(double number1, double number2)
         {
             return number1 - number2;
         }
-        public static double Multi(double number1, double number2)
+        public double Multi(double number1, double number2)
         {
             return number1 * number2;
         }
-        public static double Division(double number1, double number2)
+        public double Division(double number1, double number2)
         {
             if (number2 != 0)
             {
@@ -54,11 +32,10 @@ namespace CalculatorLibrary
                 return number1;
             }
         }
-        public static double Percentages(double number1, double number2)
+        public  double Percentages(double number1, double number2)
         {
             return number1 % number2;
             // return (number1 * number2) / 100;
         }
     }
 }
-   

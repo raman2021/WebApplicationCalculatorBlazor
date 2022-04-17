@@ -1,10 +1,9 @@
 ﻿@page "/calculator"
 @implements IDisposable
-@inject CalculatorDb<DbContext> DbFactory
 
 <h1>Calculator Using Blazor</h1>
 <hr />
-<input Models="@Calc" OnValidSubmit="HandleValidSubmit">
+<input Models="@calc" OnValidSubmit="HandleValidSubmit">
 <DataAnnotationsValidator />
 <ValidationSummary />
 <div>
@@ -16,6 +15,7 @@
             <input placeholder="" @bind="@number1" />
         </div>
     </div>
+    <ValidationMessage For="@(() => calc.number1)" />
     <br />
     <div class="row">
         <div class="col-md-3">
@@ -25,6 +25,7 @@
             <input placeholder="" @bind="number2" />
         </div>
     </div>
+    <ValidationMessage For="@(() => calc.number2)" />
     <br />
     <div class="row">
         <div class="col-md-3">
@@ -34,6 +35,7 @@
             <input readonly @bind="@result" />
         </div>
     </div>
+    <ValidationMessage For="@(() => calc.result)" />
 
     <br />
 
@@ -91,10 +93,9 @@
     void percentage()
     {
         result = (Convert.ToDouble(number1) / Convert.ToDouble(number2)).ToString();
-    }
-}
+    } }
 @code { Calculator calc = new Calculator();
-            private void HandleValidSubmit()
-            {
-                Console.WriteLine("OnValidSubmit");
-            } }
+    private void HandleValidSubmit()
+    {
+        Console.WriteLine("OnValidSubmit");
+    } }

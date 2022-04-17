@@ -1,7 +1,10 @@
 ﻿namespace CalculatorLibrary
 {
-    public class Library1
+     
+public class Library1
+
     {
+       
 
         public int Add(int num1, int num2)
         {

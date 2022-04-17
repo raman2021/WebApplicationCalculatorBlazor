@@ -13,7 +13,6 @@ namespace CalculatorTestProject1
 {
     public class UnitTest1 : Bunit.TestContext
     {
-        private IEnumerable<object> expected;
 
         Library1 lib = new Library1();
 

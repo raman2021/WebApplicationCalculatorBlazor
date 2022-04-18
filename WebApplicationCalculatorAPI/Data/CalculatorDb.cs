@@ -10,12 +10,14 @@ namespace WebApplicationCalculatorAPI.Data
     public class CalculatorDb : DbContext
     {
         public CalculatorDb(DbContextOptions<CalculatorDb> options) : base(options)
-        {
-        }
-             public DbSet<Number1> Input1{ get; set; }
-        public DbSet<Number2> Input2 { get; set; }
+        { }
+
+
+             public DbSet<Input1> Input1 { get; set; }
+        public DbSet<Input2> Input2 { get; set; }
         public DbSet<Result> Result { get; set; }
+    }
 
     }
-    }
+    
 

@@ -31,23 +31,8 @@ namespace CalculatorTestProject1
         
        
         
-            public TestHost host = new TestHost();
 
-            [Fact]
-            public void InitiallyDisplaysNoItems()
-        {
-            using var ctx = new TestContext();
-            var cut = ctx.RenderComponent<Counter>();
-            var paraElm = cut.Find("p");
-
-            // Act
-            cut.Find("button").Click();
-            var paraElmText = paraElm.TextContent;
-
-            // Assert
-            paraElmText.MarkupMatches("Current count: 1");
-
-        }
+          
     }
         }
 

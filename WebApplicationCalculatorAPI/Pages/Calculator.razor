@@ -92,7 +92,7 @@
 
     void percentage()
     {
-        result = (Convert.ToDouble(number1) / Convert.ToDouble(number2)).ToString();
+        result = (Convert.ToDouble(number1) % Convert.ToDouble(number2)).ToString();
     } }
 @code { Calculator calc = new Calculator();
     private void HandleValidSubmit()

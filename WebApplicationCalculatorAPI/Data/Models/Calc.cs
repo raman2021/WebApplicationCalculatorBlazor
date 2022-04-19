@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WebApplicationCalculatorAPI.Data.Models
 {
-    public class Calc
+    public  class Calc
     {
         public int Number1 { get; set; }
         [Required]

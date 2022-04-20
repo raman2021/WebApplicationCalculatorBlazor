@@ -1,63 +1,82 @@
 ﻿@page "/calculator"
-@implements IDisposable
+
 
 <h1>Calculator Using Blazor</h1>
 <hr />
+
+
 <input Models="@calc" OnValidSubmit="HandleValidSubmit">
 <DataAnnotationsValidator />
 <ValidationSummary />
-<div>
-    <div class="row">
-        <div class="col-md-3">
-            <p>Input 1</p>
-        </div>
-        <div class="col-md-4">
-            <input placeholder="" @bind="@number1" />
-        </div>
-    </div>
-    <ValidationMessage For="@(() => calc.number1)" />
-    <br />
-    <div class="row">
-        <div class="col-md-3">
-            <p>Input 2</p>
-        </div>
-        <div class="col-md-4">
-            <input placeholder="" @bind="number2" />
-        </div>
-    </div>
-    <ValidationMessage For="@(() => calc.number2)" />
-    <br />
-    <div class="row">
-        <div class="col-md-3">
-            <p>Result</p>
-        </div>
-        <div class="col-md-4">
-            <input readonly @bind="@result" />
-        </div>
-    </div>
-    <ValidationMessage For="@(() => calc.result)" />
 
-    <br />
-
-    <div class="row">
-        <div class="col-md-2">
-            <button @onclick="Addition" class="btn btn-primary"> + </button>
-        </div>
-        <div class="col-md-2">
-            <button @onclick="Subtraction" class="btn btn-primary"> − </button>
-
-        </div>
-        <div class="col-md-2">
-            <button @onclick="Multiplication" class="btn btn-success "> * </button>
-        </div>
-        <div class="col-md-2">
-            <button @onclick="Division" class="btn btn-primary"> / </button>
-        </div>
-        <div class="col-md-2">
-            <button @onclick="percentage" class="btn btn-success"> % </button>
-        </div>
+<div class="row">
+    <div class="col-md-3">
+        <p>Input 1</p>
+    </div>
+    <div class="col-md-4">
+        <input placeholder="" @bind="@number1" />
     </div>
 </div>
+<ValidationMessage For="@(() => calc.number1)" />
+<br />
+
+<div class="row">
+    <div class="col-md-3">
+
+        <p>Input 2</p>
+    </div>
+    <div class="col-md-4">
+
+        <input placeholder="" @bind="number2" />
+    </div>
+</div>
+<ValidationMessage For="@(() => calc.number2)" />
+<br />
+
+<div class="row">
+    <div class="col-md-3">
+
+        <p><b>Result</b></p>
+    </div>
+    <div class="col-md-4">
+
+        <input readonly @bind="@result" />
+    </div>
+    <ValidationMessage For="@(() => calc.result)" />
+</div>
+<br />
+
+
+
+
+<div class="row">
+    <div class="col-md-2">
+        <button @onclick="Addition" class="btn btn-primary"> + </button>
+    </div>
+    <div class="col-md-2">
+        <button @onclick="Subtraction" class="btn btn-primary"> − </button>
+
+    </div>
+    <div class="col-md-2">
+        <button @onclick="Multiplication" class="btn btn-success "> * </button>
+    </div>
+    <div class="col-sm-2">
+        <button @onclick="Division" class="btn btn-primary"> / </button>
+    </div>
+    <div class="col-sm-2">
+        <button @onclick="percentage" class="btn btn-success"> % </button>
+    </div>
+    <br />
+    <div class="col-sm-2">
+        <button onclick="clear" type="reset" class="btn btn-success"> CLEAR </button>
+    </div>
+
+</div>
+
+
+
+
+
 
 @code {string number1;
     string number2;

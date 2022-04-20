@@ -69,7 +69,16 @@ namespace CalculatorTestProject1
             double result = lib.Percentages(number1, number2);
             Assert.Equal(80, result);
         } 
+         public string ParseLog(string input)
+         {
+           var Input = TrimInput(input);
+            return Input;
+          }
 
+         private string TrimInput(string input)
+          {
+           return input.Trim();
+           }
       
     }
 }

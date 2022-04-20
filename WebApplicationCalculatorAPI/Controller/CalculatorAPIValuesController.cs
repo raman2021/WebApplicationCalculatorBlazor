@@ -1,9 +1,10 @@
-﻿/*using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using WebApplicationCalculatorAPI.Pages;
 
 namespace WebApplicationCalculatorAPI.Controller
 {
@@ -11,14 +12,15 @@ namespace WebApplicationCalculatorAPI.Controller
     [ApiController]
     public class CalculatorAPIValuesController : ControllerBase
     {
-        [HttpGet]
+        List<Calculator> calculators = new List<Calculator>
+      //  [HttpGet]
         public double Addition(int lValue, int rValue)
         {
             return lValue + rValue;
         }
 
 
-        [HttpGet]
+        //[HttpGet]
         public double Subtraction(int lValue, int rValue)
         {
             return lValue - rValue;
@@ -32,7 +34,7 @@ namespace WebApplicationCalculatorAPI.Controller
         }
 
 
-        [HttpGet]
+        // [HttpGet]
         public double Division(int lValue, int rValue)
         {
 
@@ -52,13 +54,19 @@ namespace WebApplicationCalculatorAPI.Controller
 
 
         }
-        [HttpGet]
+        //  [HttpGet]
 
         public double Percentage(int lValue, int rValue)
         {
             return lValue % rValue;
             // return (number1 * number2) / 100;
         }
+    };
+
+
+    public  async Task<IActionResult> GetCalculator()
+    {
+
     }
-} */
+}
 

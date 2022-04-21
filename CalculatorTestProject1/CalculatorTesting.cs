@@ -12,7 +12,7 @@ namespace CalculatorTestProject1
     public class CalculatorTesting
     {
         [Fact]
-        public void InitiallyDisplaysNoItems()
+        public void DisplaysItems()
         {
             using var ctx = new TestContext();
             var cut = ctx.RenderComponent<Calculator>();

@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 namespace WebApplicationCalculatorAPI
 {
 
-    public class Program
+    public partial class Program
     {
         public static async Task Main(string[] args)
         {

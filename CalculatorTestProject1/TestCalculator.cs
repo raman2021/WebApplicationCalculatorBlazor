@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Extensions.Hosting;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 using Topshelf.Hosts;
 using WebApplicationCalculatorAPI.Pages;
 using Xunit;
-using System.Collections.Generic.IEnumerable<T>;
+
 
 namespace CalculatorTestProject1
 {
@@ -15,6 +16,15 @@ namespace CalculatorTestProject1
         public class CalcTest
         {
             private TestHost host = new TestHost();
+            // for header tag of calulator page
+            [Fact]
+            public void MyBlazingUnitTest()
+            {
+                var component = _host.AddComponent<Calculator>();
+
+                Assert.Equal("Testing is awesome!", component.Find("h1").InnerText);
+            }
+
 
             [Fact]
             public void InitiallyDisplaysNoItems()
@@ -31,10 +41,10 @@ namespace CalculatorTestProject1
                 var component = host.AddComponent<Calculator>();
 
                 // Act
-                component.Find("input").Input1(" ");
+                component.Find("input1").Input1(" ");
                 component.Find("div").Result();
 
-                component.Find("input").Input2(" ");
+                component.Find("input2").Input2(" ");
                 component.Find("div").Result();
 
                 // Assert

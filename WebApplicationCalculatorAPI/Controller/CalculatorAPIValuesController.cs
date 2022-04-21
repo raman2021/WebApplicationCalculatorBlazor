@@ -12,15 +12,15 @@ namespace WebApplicationCalculatorAPI.Controller
     [ApiController]
     public class CalculatorAPIValuesController : ControllerBase
     {
-        List<Calculator> calculators = new List<Calculator>
-      //  [HttpGet]
+       public List<Calculator> calculators = new List<Calculator>;
+        [HttpGet]
         public double Addition(int lValue, int rValue)
         {
             return lValue + rValue;
         }
 
 
-        //[HttpGet]
+        [HttpGet]
         public double Subtraction(int lValue, int rValue)
         {
             return lValue - rValue;
@@ -34,7 +34,7 @@ namespace WebApplicationCalculatorAPI.Controller
         }
 
 
-        // [HttpGet]
+         [HttpGet]
         public double Division(int lValue, int rValue)
         {
 
@@ -54,7 +54,7 @@ namespace WebApplicationCalculatorAPI.Controller
 
 
         }
-        //  [HttpGet]
+          [HttpGet]
 
         public double Percentage(int lValue, int rValue)
         {

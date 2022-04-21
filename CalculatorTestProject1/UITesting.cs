@@ -49,12 +49,16 @@ namespace CalculatorTestProject1
         [Fact]
         public void FetchDataWorks()
         {
-            // Initially shows loading state
+            
+
+
             var req = host.AddMockHttp().Capture("/sample-data/weather.json");
             var component = host.AddComponent<FetchData>();
             Assert.Contains("Loading...", component.GetMarkup());
 
-            // When the server responds, we display the data
+          
+
+
             host.WaitForNextRender(() => req.SetResult(new[]
             {
                 new FetchData.WeatherForecast { Summary = "First" },

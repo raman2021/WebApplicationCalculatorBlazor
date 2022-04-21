@@ -13,7 +13,7 @@ namespace CalculatorTestProject1
 {
     public class UITesting : TestContext
     {
-       /* [Fact]
+        [Fact]
         public void CounterShouldIncrementWhenSelected()
         {
             // Arrange
@@ -27,7 +27,8 @@ namespace CalculatorTestProject1
 
             // Assert
             paraElmText.MarkupMatches("Input 1");
-        } */
+        } 
+
         private TestHost host = new TestHost();
 
         [Fact]

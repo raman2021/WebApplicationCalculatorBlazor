@@ -111,7 +111,7 @@
 
     void percentage()
     {
-        result = (Convert.ToDouble(number1) / Convert.ToDouble(number2)).ToString();
+        result = (Convert.ToDouble(number1) / Convert.ToDouble(number2) * Convert.ToDouble(100)).ToString();
     } }
 @code { Calculator calc = new Calculator();
     private void HandleValidSubmit()

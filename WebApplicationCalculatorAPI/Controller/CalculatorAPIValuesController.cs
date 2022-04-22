@@ -6,6 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web.Http;
 using WebApplicationCalculatorAPI.Pages;
+using FromBodyAttribute = System.Web.Http.FromBodyAttribute;
 using HttpGetAttribute = System.Web.Http.HttpGetAttribute;
 using HttpPostAttribute = System.Web.Http.HttpPostAttribute;
 using RouteAttribute = System.Web.Http.RouteAttribute;
@@ -63,7 +64,7 @@ namespace WebApplicationCalculatorAPI.Controller
 
         public double Percentage(int lValue, int rValue)
         {
-            return lValue % rValue;
+            return (lValue / rValue)*100;
             // return (number1 * number2) / 100;
         }
     };
@@ -111,5 +112,5 @@ namespace WebApplicationCalculatorAPI.Controller
             }
         }
     }
-}
+
 

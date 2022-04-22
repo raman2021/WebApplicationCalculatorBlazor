@@ -37,7 +37,7 @@ public class Library1
         }
         public  double Percentages(double number1, double number2)
         {
-            return number1 % number2;
+            return (number1 / number2)*100;
             // return (number1 * number2) / 100;
         }
     }

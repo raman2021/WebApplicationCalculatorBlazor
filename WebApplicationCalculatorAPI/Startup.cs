@@ -30,7 +30,7 @@ namespace WebApplicationCalculatorAPI
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Web_Api_Calculator", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "WebApplicationCalculatorAPI", Version = "v1" });
             });
         }
 
@@ -41,7 +41,7 @@ namespace WebApplicationCalculatorAPI
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Web_Api_Calculator v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "WebApplicationCalculatorAPI v1"));
             }
 
             app.UseHttpsRedirection();

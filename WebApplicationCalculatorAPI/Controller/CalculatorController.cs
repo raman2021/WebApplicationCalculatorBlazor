@@ -55,7 +55,7 @@ namespace WebApplicationCalculatorAPI.Controller
 
             public double Percentage(int lValue, int rValue)
             {
-                return (lValue % rValue);
+                return (lValue / rValue) * 100;
                 // return (number1 * number2) / 100;
             }
         }

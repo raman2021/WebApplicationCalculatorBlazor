@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Hosting;
+﻿using Bunit;
+using Microsoft.Extensions.Hosting;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +19,7 @@ namespace CalculatorTestProject1
             private TestHost host = new TestHost();
             // for header tag of calulator page
             [Fact]
-            public void MyBlazingUnitTest()
+            public void BlazorUnitTest()
             {
                 var component = _host.AddComponent<Calculator>();
 
@@ -27,7 +28,7 @@ namespace CalculatorTestProject1
 
 
             [Fact]
-            public void InitiallyDisplaysNoItems()
+            public void BlazorUnitTest1()
             {
                 var component = host.AddComponent<Calculator>();
                 var data = component.FindAll("div");
@@ -58,19 +59,81 @@ namespace CalculatorTestProject1
             public void add()
             {
                 // Arrange
-                var component = host.AddComponent<Calculator>();
-                component.Find("input1").Input1("");
-               
-                component.Find("input2").Input2("");
-                component.Find("+").Addition();
-                component.Find("result").Result();
+
+                using var ctx = new TestContext();
+                var cut = ctx.RenderComponent<Calculator>();
+                var paraElm = cut.Find("p");
 
                 // Act
-                component.Find("div .result").Click();
+                cut.Find("button").Click();
+                var paraElmText = paraElm.TextContent;
 
                 // Assert
-                Assert.Collection(component.FindAll("div span"),
-                    div => Assert.Equal(" ", div.InnerText));
+                paraElmText.MarkupMatches("+");
+            }
+            [Fact]
+            public void sub()
+            {
+                // Arrange
+
+                using var ctx = new TestContext();
+                var cut = ctx.RenderComponent<Calculator>();
+                var paraElm = cut.Find("p");
+
+                // Act
+                cut.Find("button").Click();
+                var paraElmText = paraElm.TextContent;
+
+                // Assert
+                paraElmText.MarkupMatches("+");
+            }
+            [Fact]
+            public void multi()
+            {
+                // Arrange
+
+                using var ctx = new TestContext();
+                var cut = ctx.RenderComponent<Calculator>();
+                var paraElm = cut.Find("p");
+
+                // Act
+                cut.Find("button").Click();
+                var paraElmText = paraElm.TextContent;
+
+                // Assert
+                paraElmText.MarkupMatches("+");
+            }
+            [Fact]
+            public void division()
+            {
+                // Arrange
+
+                using var ctx = new TestContext();
+                var cut = ctx.RenderComponent<Calculator>();
+                var paraElm = cut.Find("p");
+
+                // Act
+                cut.Find("button").Click();
+                var paraElmText = paraElm.TextContent;
+
+                // Assert
+                paraElmText.MarkupMatches("+");
+            }
+            [Fact]
+            public void percentage()
+            {
+                // Arrange
+
+                using var ctx = new TestContext();
+                var cut = ctx.RenderComponent<Calculator>();
+                var paraElm = cut.Find("p");
+
+                // Act
+                cut.Find("button").Click();
+                var paraElmText = paraElm.TextContent;
+
+                // Assert
+                paraElmText.MarkupMatches("+");
             }
         }
     }

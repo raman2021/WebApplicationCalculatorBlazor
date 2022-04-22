@@ -18,7 +18,9 @@ namespace WebApplicationCalculatorAPI.Controller
     [AllowAnonymous]
     public class CalculatorAPIValuesController : ControllerBase
     {
-       public List<Calculator> calculators = new List<Calculator>;
+      // public List<Calculator> calculators = new List<Calculator> { }
+
+
         [HttpGet]
         public double Addition(int lValue, int rValue)
         {

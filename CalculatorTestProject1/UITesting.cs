@@ -18,7 +18,7 @@ namespace CalculatorTestProject1
         {
             // Arrange
             using var ctx = new TestContext();
-            var cut = ctx.RenderComponent<Calculator>();
+            var cut = ctx.RenderComponent<Counter>();
             var paraElm = cut.Find("p");
 
             // Act
@@ -26,7 +26,7 @@ namespace CalculatorTestProject1
             var paraElmText = paraElm.TextContent;
 
             // Assert
-            paraElmText.MarkupMatches("Input 1");
+            paraElmText.MarkupMatches("");
         } 
 
         private TestHost host = new TestHost();

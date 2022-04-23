@@ -20,7 +20,7 @@ namespace CalculatorTestProject1
             [Fact]
             public void add()
             {
-                // Arrange
+               
 
                 using var ctx = new TestContext();
                 var cut = ctx.RenderComponent<Calculator>();

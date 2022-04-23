@@ -29,13 +29,13 @@ namespace CalculatorTestProject1
          } */
 
             {
-                // arrange
+                
                 var ctx = new TestContext();
 
-                // act
+              
                 var comp = ctx.RenderComponent<Calculator>();
 
-                // assert
+             
                 var expectedHtml = @"<h1> Calculator Using Blazor</h1>
  <div class=""row"">
     < div class=""col-md-3"">

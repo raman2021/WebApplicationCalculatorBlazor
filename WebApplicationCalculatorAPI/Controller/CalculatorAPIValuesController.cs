@@ -74,11 +74,11 @@ namespace WebApplicationCalculatorAPI.Controller
         
     
         [HttpPost]
-        public ActionResult<IEnumerable<string>> CalcData([FromBody] Calculator Calculation)
+        public ActionResult<IEnumerable<string>> CalcData([FromBody] Calculator Calculator)
         {
-            String Input1 = Calculation.Input1.Trim();
-            String Input2 = Calculation.Input2.Trim();
-            String Result = Calculation.Result.Trim();
+            String Input1 = Calculator.Input1.Trim();
+            String Input2 = Calculator.Input2.Trim();
+            String Result = Calculator.Result.Trim();
 
             if (Input1.Trim() != "" && Input2.Trim() != "" && Result.Trim() != "")
             {
@@ -86,7 +86,7 @@ namespace WebApplicationCalculatorAPI.Controller
                 String RData = "0";
                 if (Result.Trim().ToUpper() == "ADDITION")
                 {
-                    RData = Convert.ToString(objCalculator.Addition(Convert.ToInt32(Input1.Trim()), Convert.ToInt32(Input2.Trim()))); (Value2.Trim())));
+                    RData = Convert.ToString(objCalculator.Addition(Convert.ToInt32(Input1.Trim()), Convert.ToInt32(Input2.Trim()))); 
                 }
                 else if (Result.Trim() == "SUBTRACTION")
                 {

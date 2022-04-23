@@ -28,4 +28,8 @@
 		<InternalsVisibleTo Include="CalculatorTestProject1" />
 	</ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\CalculatorLibrary\CalculatorLibrary.csproj" />
+  </ItemGroup>
+
 </Project>

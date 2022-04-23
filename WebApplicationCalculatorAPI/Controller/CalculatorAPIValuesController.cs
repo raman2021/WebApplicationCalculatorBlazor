@@ -74,7 +74,7 @@ namespace WebApplicationCalculatorAPI.Controller
         
     
         [HttpPost]
-        public ActionResult<IEnumerable<string>> CalcData([FromBody] Calculator Calculator)
+        public ActionResult<IEnumerable<string>> CalcData ([FromBody] Calculator Calculator)
         {
             String Input1 = Calculator.Input1.Trim();
             String Input2 = Calculator.Input2.Trim();

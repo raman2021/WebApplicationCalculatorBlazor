@@ -29,7 +29,7 @@ namespace CalculatorTestProject1
             paraElmText.MarkupMatches("");
         } 
 
-        private TestHost host = new TestHost();
+        public TestHost host = new TestHost();
 
         [Fact]
         public void CounterWorks()

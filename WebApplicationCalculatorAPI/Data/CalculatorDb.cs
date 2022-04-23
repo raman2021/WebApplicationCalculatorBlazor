@@ -17,7 +17,7 @@ namespace WebApplicationCalculatorAPI.Data
         }
 
         [Key]
-            // public DbSet<Input1> Input1 { get; set; }
+         public DbSet<Input1> Input1 { get; set; }
         public DbSet<Number2> Input2 { get; set; }
         public DbSet<Result> Result { get; set; }
     }

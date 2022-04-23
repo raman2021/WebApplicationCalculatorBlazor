@@ -18,67 +18,68 @@ namespace WebApplicationCalculatorAPI.Controller
     [AllowAnonymous]
     public class CalculatorAPIValuesController : ControllerBase
     {
-      // public List<Calculator> calculators = new List<Calculator> { }
-
-
-        [HttpGet]
-        public double Addition(int lValue, int rValue)
-        {
-            return lValue + rValue;
-        }
-
-
-        [HttpGet]
-        public double Subtraction(int lValue, int rValue)
-        {
-            return lValue - rValue;
-        }
-
-
-        [HttpGet]
-        public double Multiplication(int lValue, int rValue)
-        {
-            return lValue * rValue;
-        }
-
-
-         [HttpGet]
-        public double Division(int lValue, int rValue)
+        // public List<Calculator> calculators = new List<Calculator> { }
+        public class Calculator
         {
 
-
-            if (lValue != 0 || rValue != 0)
+            [HttpGet]
+            public double Addition(int lValue, int rValue)
             {
-                return lValue / rValue;
-
-            }
-            else
-            {
-                throw new ArgumentException();
-
-
+                return lValue + rValue;
             }
 
 
+            [HttpGet]
+            public double Subtraction(int lValue, int rValue)
+            {
+                return lValue - rValue;
+            }
 
-        }
-          [HttpGet]
 
-        public double Percentage(int lValue, int rValue)
-        {
-            return (lValue / rValue)*100;
-            // return (number1 * number2) / 100;
-        }
-    };
+            [HttpGet]
+            public double Multiplication(int lValue, int rValue)
+            {
+                return lValue * rValue;
+            }
 
-        
-    
+
+            [HttpGet]
+            public double Division(int lValue, int rValue)
+            {
+
+
+                if (lValue != 0 || rValue != 0)
+                {
+                    return lValue / rValue;
+
+                }
+                else
+                {
+                    throw new ArgumentException();
+
+
+                }
+
+
+
+            }
+            [HttpGet]
+
+            public double Percentage(int lValue, int rValue)
+            {
+                return (lValue / rValue) * 100;
+                // return (number1 * number2) / 100;
+            }
+        };
+
+
+
         [HttpPost]
-        public ActionResult<IEnumerable<string>> CalcData ([FromBody] Calculator Calculator)
+        public ActionResult<IEnumerable<string>> CalcData([FromBody] Calc Calc)
         {
-            String Input1 = Calculator.Input1.Trim();
-            String Input2 = Calculator.Input2.Trim();
-            String Result = Calculator.Result.Trim();
+            String Input1 = Calc.Input1.Trim();
+            String Input2 = Calc.Input2.Trim();
+            String Result = Calc.Result.Trim();
 
             if (Input1.Trim() != "" && Input2.Trim() != "" && Result.Trim() != "")
             {
@@ -86,7 +87,7 @@ namespace WebApplicationCalculatorAPI.Controller
                 String RData = "0";
                 if (Result.Trim().ToUpper() == "ADDITION")
                 {
-                    RData = Convert.ToString(objCalculator.Addition(Convert.ToInt32(Input1.Trim()), Convert.ToInt32(Input2.Trim()))); 
+                    RData = Convert.ToString(objCalculator.Addition(Convert.ToInt32(Input1.Trim()), Convert.ToInt32(Input2.Trim())));
                 }
                 else if (Result.Trim() == "SUBTRACTION")
                 {
@@ -95,24 +96,33 @@ namespace WebApplicationCalculatorAPI.Controller
                 else if (Result.Trim() == "MULTIPLICATION")
                 {
                     RData = Convert.ToString(objCalculator.Multiplication(Convert.ToInt32(Input1.Trim()), Convert.ToInt32(Input2.Trim())));
-            }
+                }
                 else if (Result.Trim() == "DIVISION")
                 {
                     RData = Convert.ToString(objCalculator.Division(Convert.ToInt32(Input1.Trim()), Convert.ToInt32(Input2.Trim())));
-            }
-            else if (Result.Trim() == "PERCENTAGE")
-            {
-                RData = Convert.ToString(objCalculator.Percentages(Convert.ToInt32(Input1.Trim()), Convert.ToInt32(Input2.Trim())));
-            }
+                }
+                else if (Result.Trim() == "PERCENTAGE")
+                {
+                    RData = Convert.ToString(objCalculator.Percentage(Convert.ToInt32(Input1.Trim()), Convert.ToInt32(Input2.Trim())));
+                }
 
 
-            return new string[] { RData };
+                return new string[] { RData };
             }
             else
             {
                 return new string[] { "0" };
             }
         }
+
+        public class Calc
+        {
+            public string Input1 { get; set; } = "0";
+            public string Input2 { get; set; } = "0";
+            public string Result { get; set; } = "";
+        }
     }
+}
+    
 
 

@@ -25,6 +25,7 @@
     <PackageReference Include="MySql.Data" Version="8.0.28" />
     <PackageReference Include="RichardSzalay.MockHttp" Version="5.0.0" />
     <PackageReference Include="System.Net.Http.Json" Version="5.0.0" />
+    <PackageReference Include="Topshelf" Version="4.3.0" />
  
 	
 		<InternalsVisibleTo Include="CalculatorTestProject1" />
